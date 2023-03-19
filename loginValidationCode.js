@@ -7,8 +7,20 @@ function validateForm() {
     if(getUname.value.trim() == "" ) {
         alert("The field 'Username' cannot be blank.");
 
+        getUname.style.border = "solid 3px red";
+
         return false;   
     }
+
+
+    //  Validation - Name cannot be less than 5 letters.
+    if(getUname.value.length < 5) {
+        alert("The Username cannot be less than 5 letters.");
+
+        getUname.style.border = "solid 3px red";
+
+        return false;  
+    } 
 
 
     /* Validation - Password must be eight characters or longer, must
@@ -20,11 +32,12 @@ function validateForm() {
     
     if(!pwRegExp.test(getPw.value)) {    
         alert("Password must be eight characters or longer, must contain at least one lowercase alpahbet, one uppercase alphabet and at least one numeric character.");
-
+        
+        getPw.style.border = "solid 3px red";
         return false;
 
     }
 
 
 
-} //End of Function.
+} //End of Function.
